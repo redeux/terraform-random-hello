@@ -5,7 +5,7 @@ variable "hello" {
 
 variable "secret_key" {
   type        = string
-  description = "just a string with who we want to greet"
+  description = "this is a secret"
 }
 
 resource "random_pet" "server" {
