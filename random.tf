@@ -10,7 +10,8 @@ variable "secret_key" {
 
 resource "random_pet" "server" {
   keepers = {
-    hello = var.hello
+    hello      = var.hello
+    secret_key = var.secret_key
   }
 }
 
