@@ -15,6 +15,12 @@ resource "random_pet" "server" {
   }
 }
 
+resource "random_pet" "number_2" {
+  keepers = {
+    hello = var.hello
+  }
+}
+
 output "pet" {
   value = random_pet.server.id
 }
