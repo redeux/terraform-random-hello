@@ -3,6 +3,11 @@ variable "hello" {
   description = "just a string with who we want to greet"
 }
 
+variable "second_hello" {
+  type        = string
+  description = "just a second hello"
+}
+
 variable "secret_key" {
   type        = string
   description = "this is a secret"
@@ -17,7 +22,7 @@ resource "random_pet" "server" {
 
 resource "random_pet" "number_2" {
   keepers = {
-    hello = var.hello
+    hello = var.second_hello
   }
 }
 
