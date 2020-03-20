@@ -29,3 +29,7 @@ resource "random_pet" "number_2" {
 output "pet" {
   value = random_pet.server.id
 }
+
+output "list_of_pets" {
+  value = [random_pet.server.id, random_pet.number_2.id]
+}
