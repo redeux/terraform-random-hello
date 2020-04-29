@@ -1,11 +1,9 @@
-variable "hello" {
-  type        = string
-  description = "just a string with who we want to greet"
-}
-
-variable "second_hello" {
-  type        = string
-  description = "just a second hello"
+variable "hellos" {
+  type = object({
+    hello        = string
+    second_hello = string
+  })
+  description = "list of hellos"
 }
 
 variable "secret_key" {
@@ -15,14 +13,14 @@ variable "secret_key" {
 
 resource "random_pet" "server" {
   keepers = {
-    hello      = var.hello
+    hello      = var.hellos.hello
     secret_key = var.secret_key
   }
 }
 
 resource "random_pet" "number_2" {
   keepers = {
-    hello = var.second_hello
+    hello = var.hellos.second_hello
   }
 }
 
