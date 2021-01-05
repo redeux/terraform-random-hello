@@ -33,5 +33,5 @@ output "list_of_pets" {
 }
 
 output "quoted_some_key" {
-  value = "${var.some_key}"
+  value = var.some_key
 }
